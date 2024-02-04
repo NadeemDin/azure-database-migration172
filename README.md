@@ -142,8 +142,18 @@ Create a controlled experimentation environment, similar to a sandbox, for devel
 
 3. **Restore Database Backup:**
    - Restore the database backup from the blob storage onto this new "sandbox" environment.
+  
+### 4. SQL Server Credential Creation
 
-### 4. Automated Backups for Development
+Before utilizing the SQL Server Maintenance Plan Wizard, it was necessary to create a SQL Server Credential. This step ensures secure access to the Azure Blob Storage. Execute the following SQL script:
+
+```
+CREATE CREDENTIAL [YourCredentialName]
+WITH IDENTITY = '[Your Azure Storage Account Name]',
+SECRET = 'Access Key';
+```
+
+### 5. Automated Backups for Development
 
 Implement an automated backup strategy for your development environment using SSMS. Here's how:
 
