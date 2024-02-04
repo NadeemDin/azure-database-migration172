@@ -2,7 +2,11 @@
 
 ## Overview
 
-Welcome to the Azure Database Migration Project! This project showcases the creation and implementation of a cloud-based database system on Microsoft Azure, demonstrating practical skills in cloud engineering. Our journey involves setting up a production environment database and smoothly migrating it to Azure SQL Database.
+Welcome to the Azure Database Migration Project! This comprehensive endeavor showcases the creation and implementation of a cloud-based database system on Microsoft Azure, highlighting practical skills in cloud engineering. Our journey begins with the setup of a production environment database, followed by a smooth migration to Azure SQL Database.
+
+Additionally, we emphasize the creation of a dedicated development environment, kept separate from the production system, serving as a sandbox for testing and experimentation. This environment mirrors the production setup, allowing for controlled exploration of new concepts without impacting critical systems.
+
+Furthermore, our project includes the automation and scheduling of backups to Azure storage, ensuring consistent protection and simplifying recovery processes. This strategic backup approach enhances data security and resilience.
 
 ## Virtual Machine Setup
 
