@@ -167,4 +167,32 @@ Implement an automated backup strategy for your development environment using SS
 2. **Configure Backup Schedule:**
    - Configure a weekly backup schedule using the SSMS maintenance plan wizard to ensure consistent protection for your evolving work and simplify recovery for your development environment if needed. This was configured to upload to the Azure blob storage.
 
+### 6. Disaster Recovery
+
+Distaster can appear in the form of data deletion or corruption.
+It is therefore essential to ensure regular backups are saved for recovery purposes.
+A simulated deletion was ran within the production environment. 
+
+1. **Table deletion in SSMS**
+   - The Sales.SalesTerritoryHistory table was deleted directly from SSMS - to recover we can simply use the previously saved/automated backup created in section 5.
+
+2. **Data Deletion or Corruption**
+   - Luckily the database is backed up directly to Azure blob storage via task 5. We can access this and select restore, after completing the form and selecting a point of restoration; this will restore the database to the previous version and allow us to refresh the Azure data studio and regain deleted or corrupted information.
+  
+SQL queries below are methods of intentional data deletion or corruption.
+  
+```
+     -- Intentional Deletion
+DELETE TOP (100)
+FROM Sales.SalesTerritoryHistory;
+
+-- Data Corruption
+UPDATE TOP (100) Sales.SalesTerritoryHistory
+SET product_price = NULL
+```
+
+Note: To avoid significant data loss or corruption, it is important to always query or manipulate the database within a testing enviroment.
+
+
+
 
