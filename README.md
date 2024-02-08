@@ -113,7 +113,7 @@ Implement an automated backup strategy for your development environment using SS
 1. **Management Task with SSMS:** On your development Windows VM, use SSMS to establish a Management Task.
 2. **Configure Backup Schedule:** Configure a weekly backup schedule using the SSMS maintenance plan wizard to ensure consistent protection for your evolving work and simplify recovery for your development environment if needed. This was configured to upload to the Azure blob storage.
 
-### 6. Disaster Recovery
+### Disaster Recovery
 
 Disasters can occur in various forms, such as data deletion or corruption. Hence, it is crucial to ensure regular backups are saved for recovery purposes. A simulated deletion was run within the production environment.
 
@@ -132,11 +132,11 @@ UPDATE TOP (100) Sales.SalesTerritoryHistory
 SET product_price = NULL
 ```
 
-### 7. Geo-Replication
+### Geo-Replication
 
 To enhance data protection and further prevent data loss, reduce downtime, and ensure data availability, geo-replication is used to create a replica of our production database and store it in another geographical location. This can be done pretty easily by accessing the original production database and selecting a replica from the selections provided in the Azure side menu. By simply filling out the forms and deploying, we can create the geo-replicated database which can be connected to should we need it.
 
-### 8. Failover
+### Failover
 
 In Azure, failover is crucial for maintaining uninterrupted service availability and reliability. Failover automatically redirects traffic from a primary instance to a secondary one in case of failure. Azure provides tools like Traffic Manager, Load Balancer, and Site Recovery to facilitate failover. These services ensure continuous operation by distributing traffic, detecting and rerouting around failures, and orchestrating recovery processes. Implementing failover in Azure minimizes downtime, enhances business continuity, and instills confidence in the reliability of cloud-based applications and services.
 
