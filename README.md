@@ -193,6 +193,10 @@ SET product_price = NULL
 
 Note: To avoid significant data loss or corruption, it is important to always query or manipulate the database within a testing enviroment.
 
+### 6. Geo-Replication
+
+To enhance data protection and further prevent data loss, reduce down time and ensure data availability, geo-replication is used to create a replica of our production database and store it in another geographical location. This can be done pretty easily by accessing the original production database and selecting replica from the selections provided in the Azure side menu. By simply filling out the forms and deploying, we can create the geo-replicated database which can be connected to should we need it.
+
 
 
 
