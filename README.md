@@ -124,8 +124,8 @@ Implement an automated backup strategy for your development environment using SS
 
 Disasters can occur in various forms, such as data deletion or corruption. Hence, it is crucial to ensure regular backups are saved for recovery purposes. A simulated deletion was run within the production environment.
 
-1. **Table Deletion in SSMS:** The Sales.SalesTerritoryHistory table was deleted directly from SSMS - to recover, we can simply use the previously saved/automated backup created in section 5.
-2. **Data Deletion or Corruption:** Luckily, the database is backed up directly to Azure blob storage via task 5. We can access this and select restore, after completing the form and selecting a point of restoration; this will restore the database to the previous version and allow us to refresh the Azure Data Studio and regain deleted or corrupted information.
+1. **Table Deletion in SSMS:** The Sales.SalesTerritoryHistory table was deleted directly from SSMS - to recover, we can simply use the previously saved/automated backup created.
+2. **Data Deletion or Corruption:** Luckily, the database is backed up directly to Azure blob storage. We can access this and select restore, after completing the form and selecting a point of restoration; this will restore the database to the previous version and allow us to refresh the Azure Data Studio and regain deleted or corrupted information.
 
 ### 7. Geo-Replication
 
