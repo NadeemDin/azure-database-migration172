@@ -101,17 +101,10 @@ Create a controlled experimentation environment, similar to a sandbox, for devel
 Before utilizing the SQL Server Maintenance Plan Wizard, it was necessary to create a SQL Server Credential. This step ensures secure access to the Azure Blob Storage. Execute the following SQL script:
 
 ```
-     -- Intentional Deletion
-DELETE TOP (100)
-FROM Sales.SalesTerritoryHistory;
-
--- Data Corruption
-UPDATE TOP (100) Sales.SalesTerritoryHistory
-SET product_price = NULL
+CREATE CREDENTIAL [YourCredentialName]
+WITH IDENTITY = '[Your Azure Storage Account Name]',
+SECRET = 'Access Key';
 ```
-
-Note: To avoid significant data loss or corruption, it is important to always query or manipulate the database within a testing enviroment.
-
 
 ### 5. Automated Backups for Development
 
@@ -126,6 +119,18 @@ Disasters can occur in various forms, such as data deletion or corruption. Hence
 
 1. **Table Deletion in SSMS:** The Sales.SalesTerritoryHistory table was deleted directly from SSMS - to recover, we can simply use the previously saved/automated backup created.
 2. **Data Deletion or Corruption:** Luckily, the database is backed up directly to Azure blob storage. We can access this and select restore, after completing the form and selecting a point of restoration; this will restore the database to the previous version and allow us to refresh the Azure Data Studio and regain deleted or corrupted information.
+
+SQL queries below are methods of intentional data deletion or corruption.
+  
+```
+-- Intentional Deletion
+DELETE TOP (100)
+FROM Sales.SalesTerritoryHistory;
+
+-- Data Corruption
+UPDATE TOP (100) Sales.SalesTerritoryHistory
+SET product_price = NULL
+```
 
 ### 7. Geo-Replication
 
