@@ -135,4 +135,11 @@ To enhance data protection and further prevent data loss, reduce downtime, and e
 
 In Azure, failover is crucial for maintaining uninterrupted service availability and reliability. Failover automatically redirects traffic from a primary instance to a secondary one in case of failure. Azure provides tools like Traffic Manager, Load Balancer, and Site Recovery to facilitate failover. These services ensure continuous operation by distributing traffic, detecting and rerouting around failures, and orchestrating recovery processes. Implementing failover in Azure minimizes downtime, enhances business continuity, and instills confidence in the reliability of cloud-based applications and services.
 
-To initiate a failover, a primary and secondary database are required - we will use the newly made/geo-replicated database from section 7. Within the Azure portal, access the server associated with the primary database and select the failover groups under the data management pane. Create a new failover group and then proceed by selecting failover; this will switch the roles of the primary and secondary databases. To test a successful failover, the now primary server can be connected to via the Azure Data Studio and schema/data can be validated.
+To initiate a failover, follow these steps:
+
+1. **Primary and Secondary Databases:** Ensure you have a primary and secondary database set up, such as the newly made/geo-replicated database from section 7.
+2. **Access Azure Portal:** Navigate to the Azure portal and access the server associated with the primary database.
+3. **Select Failover Groups:** Under the data management pane, select the failover groups option.
+4. **Create Failover Group:** Create a new failover group and proceed by selecting failover. This action will switch the roles of the primary and secondary databases.
+5. **Test Failover:** To test a successful failover, connect to the now primary server via Azure Data Studio, and validate the schema and data.
+
