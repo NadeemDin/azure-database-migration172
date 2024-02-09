@@ -115,7 +115,7 @@ Implement an automated backup strategy for your development environment using SS
 1. **Management Task with SSMS:** On your development Windows VM, use SSMS to establish a Management Task.
 2. **Configure Backup Schedule:** Configure a weekly backup schedule using the SSMS maintenance plan wizard to ensure consistent protection for your evolving work and simplify recovery for your development environment if needed. This was configured to upload to the Azure blob storage.
 
-### Disaster Recovery
+## Disaster Recovery
 
 Disasters can occur in various forms, such as data deletion or corruption. Hence, it is crucial to ensure regular backups are saved for recovery purposes. A simulated deletion was run within the production environment.
 
