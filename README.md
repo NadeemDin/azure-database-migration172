@@ -176,6 +176,7 @@ User will only have read-only access.
 
 ## Thoughts
 Azure offers a seamless user experience, enticing users to integrate more with its services through its intuitive interface and abundance of tools.
+When architecting a new cloud-based system, having a visual diagram of the architecture can be invaluable. It serves as a guide, ensuring clarity and preventing confusion amidst the build process.
 
    
 
