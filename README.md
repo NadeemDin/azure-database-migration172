@@ -8,7 +8,7 @@ Additionally, I emphasize the creation of a dedicated development environment, k
 
 Furthermore, my project includes the automation and scheduling of backups to Azure storage, ensuring consistent protection and simplifying recovery processes. This strategic backup approach enhances data security and resilience, critical in maintaining the integrity of your database systems.
 
-Throughout this project, we'll cover essential aspects such as virtual machine setup, SQL Server installation, database creation, migration setup, validation, disaster recovery, geo-replication, failover procedures, and Microsoft Entra Directory integration. Each section contributes to a robust and comprehensive understanding of managing databases on Azure, equipping you with the skills necessary for efficient cloud-based data management.
+Throughout this project, I'll cover essential aspects such as virtual machine setup, SQL Server installation, database creation, migration setup, validation, disaster recovery, geo-replication, failover procedures, and Microsoft Entra Directory integration. Each section contributes to a robust and comprehensive understanding of managing databases on Azure; skills necessary for efficient cloud-based data management.
 
 ## Virtual Machine Setup
 
@@ -171,6 +171,9 @@ We can define who has access via Entra ID and to what level, always opting to ad
 
 To test this we can simply edit the connection to our database, authenticate with a 'new account' and sign in with the new user details.
 User will only have read-only access.
+
+## Thoughts
+Azure offers a seamless user experience, enticing users to integrate more with its services through its intuitive interface and abundance of tools.
 
    
 
