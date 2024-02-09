@@ -134,11 +134,11 @@ UPDATE TOP (100) Sales.SalesTerritoryHistory
 SET product_price = NULL
 ```
 
-### Geo-Replication
+## Geo-Replication
 
 To enhance data protection and further prevent data loss, reduce downtime, and ensure data availability, geo-replication is used to create a replica of our production database and store it in another geographical location. This can be done pretty easily by accessing the original production database and selecting a replica from the selections provided in the Azure side menu. By simply filling out the forms and deploying, we can create the geo-replicated database which can be connected to should we need it.
 
-### Failover
+## Failover
 
 In Azure, failover is crucial for maintaining uninterrupted service availability and reliability. Failover automatically redirects traffic from a primary instance to a secondary one in case of failure. Azure provides tools like Traffic Manager, Load Balancer, and Site Recovery to facilitate failover. These services ensure continuous operation by distributing traffic, detecting and rerouting around failures, and orchestrating recovery processes. Implementing failover in Azure minimizes downtime, enhances business continuity, and instills confidence in the reliability of cloud-based applications and services.
 
@@ -150,7 +150,7 @@ To initiate a failover, follow these steps:
 4. **Create Failover Group:** Create a new failover group and proceed by selecting failover. This action will switch the roles of the primary and secondary databases.
 5. **Test Failover:** To test a successful failover, connect to the now primary server via Azure Data Studio, and validate the schema and data.
 
-### Microsoft Entra Directory Integration
+## Microsoft Entra Directory Integration
 
 By integrating Microsoft Entra Directory (Entra ID) we can add a more advanced layer of security and authorisation to a users database access.
 We can define who has access via Entra ID and to what level, always opting to adhere to the 'principle of least privilege' - This ensures very few people can accidentally modify a database.
