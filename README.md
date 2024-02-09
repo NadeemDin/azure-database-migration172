@@ -148,3 +148,34 @@ To initiate a failover, follow these steps:
 4. **Create Failover Group:** Create a new failover group and proceed by selecting failover. This action will switch the roles of the primary and secondary databases.
 5. **Test Failover:** To test a successful failover, connect to the now primary server via Azure Data Studio, and validate the schema and data.
 
+### Microsoft Entra Directory Integration
+
+By integrating Microsoft Entra Directory (Entra ID) we can add a more advanced layer of security and authorisation to a users database access.
+We can define who has access via Entra ID and to what level, always opting to adhere to the 'principle of least privilege' - This ensures very few people can accidentally modify a database.
+
+**Assigning admin privileges:** Simply by accessing our main server via the Azure portal we can access Microsoft Entra ID via the settings section, we can then set an admin and save. Once assigned, this user can then use the Microsoft Entra ID authentication type when connecting to the database via Azure Data Studio.
+
+**Assigning db_datareader / read-only access to a user:**
+1. Create a new user account by navigating to the Microsoft Entra ID service via the Azure Portal (make note of the password and user principal name (e.g.DB_Reader@yourdomain.com).
+   
+2. Using the Azure Data Studio access the database and right-click to run a the query;
+   
+   ```
+   CREATE USER [DB_Reader@yourdomain.com] FROM EXTERNAL PROVIDER;
+   ALTER ROLE db_datareader ADD MEMBER [DB_Reader@yourdomain.com];
+    ```
+
+   This will assign the new user with the db_datareader status.
+
+To test this we can simply edit the connection to our database, authenticate with a 'new account' and sign in with the new user details.
+User will only have read-only access.
+
+   
+
+
+
+
+
+
+
+
