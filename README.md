@@ -2,32 +2,34 @@
 
 ## Overview
 
-Welcome to the Azure Database Migration Project! This comprehensive endeavor showcases the creation and implementation of a cloud-based database system on Microsoft Azure, highlighting practical skills in cloud engineering. Our journey begins with the setup of a production environment database, followed by a smooth migration to Azure SQL Database.
+Welcome to my Azure Database Migration Project! In this comprehensive endeavor, I will architect and implement a cloud-based database system on Microsoft Azure, showcasing practical skills in cloud engineering. Our journey begins with the setup of a production environment database, followed by a smooth migration to Azure SQL Database.
 
-Additionally, we emphasize the creation of a dedicated development environment, kept separate from the production system, serving as a sandbox for testing and experimentation. This environment mirrors the production setup, allowing for controlled exploration of new concepts without impacting critical systems.
+Additionally, I emphasize the creation of a dedicated development environment, kept separate from the production system, serving as a sandbox for testing and experimentation. This environment mirrors the production setup, allowing for controlled exploration of new concepts without impacting critical systems.
 
-Furthermore, our project includes the automation and scheduling of backups to Azure storage, ensuring consistent protection and simplifying recovery processes. This strategic backup approach enhances data security and resilience.
+Furthermore, my project includes the automation and scheduling of backups to Azure storage, ensuring consistent protection and simplifying recovery processes. This strategic backup approach enhances data security and resilience, critical in maintaining the integrity of your database systems.
+
+Throughout this project, we'll cover essential aspects such as virtual machine setup, SQL Server installation, database creation, migration setup, validation, disaster recovery, geo-replication, failover procedures, and Microsoft Entra Directory integration. Each section contributes to a robust and comprehensive understanding of managing databases on Azure, equipping you with the skills necessary for efficient cloud-based data management.
 
 ## Virtual Machine Setup
 
 In the initial phase, we create a Windows Virtual Machine (VM) to emulate the functions of a Windows server, resembling an on-premise system within a company. This VM serves as a secure repository for the company's database. Here's a quick rundown of the setup process:
 
-- **Virtual Machine Creation:** Utilize your chosen virtualization platform to create a new Windows VM, allocating sufficient resources (CPU, RAM, Storage) with cost/use case in mind.
-- **Firewall Rules:** Set up Windows Firewall to allow RDP traffic (port 3389) and open necessary ports for SQL Server (port 1433) - this is default.
-- **Remote Connection to the VM:** Connect to the VM using Remote Desktop Connection and enter the VM's static IP address and login credentials - this can be done by downloading the RDP file via the connections menu when viewing the VM resource.
+1. **Virtual Machine Creation:** Accessing the VM service in Azure; create a new Windows VM, allocating sufficient resources (CPU, RAM, Storage) with cost/use case in mind.
+2. **Firewall Rules:** Set up Windows Firewall to allow RDP traffic (port 3389) and open necessary ports for SQL Server (port 1433) - this is default.
+3. **Remote Connection to the VM:** Connect to the VM using Remote Desktop Connection and enter the VM's static IP address and login credentials - this can be done by downloading the RDP file via the connections menu when viewing the VM resource.
 
 ## SQL Server Installation
 
 With the VM set up, it's time to install SQL Server. Follow these steps:
 
-- **SQL Server Installation:** Download the SQL Server installation package (https://learn.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver16), follow the installation wizard, and configure authentication with a strong password for the SA account.
-- **SQL Server Management Studio (SSMS):** Download and install SSMS.
+1. **SQL Server Installation:** Download the SQL Server installation package (https://learn.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver16), follow the installation wizard, and configure authentication with a strong password for the SA account.
+2. **SQL Server Management Studio (SSMS):** Download and install SSMS.
 
 ## Database Creation
 
 Utilizing the AdventureWorks database as a comprehensive sample database for our project, follow these steps:
 
-- **AdventureWorks Database:** Obtain the AdventureWorks backup file, save it in 'C:\Program Files\Microsoft SQL Server\MSSQL16.MSSQLSERVER\MSSQL\Backup', and restore the AdventureWorks database using SSMS.
+**AdventureWorks Database:** Obtain the AdventureWorks backup file, save it in 'C:\Program Files\Microsoft SQL Server\MSSQL16.MSSQLSERVER\MSSQL\Backup', and restore the AdventureWorks database using SSMS.
 
 ## Migration Setup
 
@@ -37,38 +39,38 @@ Now, let's migrate both schema and data from our local database to Azure SQL Dat
 
 Prepare the target for migration by setting up the Azure SQL Database:
 
-- **Creation of Azure SQL Database:** Create an Azure SQL Database for migration.
-- **SQL Server Authentication:** Configure SQL Server to use SQL login.
-- **Firewall Rules:** Ensure the SQL Server has appropriate firewall rules.
+1. **Creation of Azure SQL Database:** Create an Azure SQL Database for migration.
+2. **SQL Server Authentication:** Configure SQL Server to use SQL login.
+3. **Firewall Rules:** Ensure the SQL Server has appropriate firewall rules.
 
 ## Azure Data Studio Configuration
 
 Set up Azure Data Studio for seamless migration:
 
-- **Installation of Azure Data Studio:** Azure Data Studio is already preinstalled via the installation of SSMS and can be accessed via tools within SSMS.
-- **Connection to On-Premise Database:** Use Azure Data Studio to establish a connection to the existing on-premise database.
-- **Connection to Azure SQL Database:** Connect to the newly created Azure SQL Database using Azure Data Studio.
-- **SQL:** Queries can be ran within Azure Data Studio.
+1. **Installation of Azure Data Studio:** Azure Data Studio is already preinstalled via the installation of SSMS and can be accessed via tools within SSMS.
+2. **Connection to On-Premise Database:** Use Azure Data Studio to establish a connection to the existing on-premise database.
+3. **Connection to Azure SQL Database:** Connect to the newly created Azure SQL Database using Azure Data Studio.
+4. **SQL:** Queries can be ran within Azure Data Studio.
 
 ## Schema Migration
 
 Migrate the schema with the SQL Server Schema Compare extension:
 
-- **Installation of SQL Server Schema Compare Extension:** Install the extension within Azure Data Studio.
-- **Schema Comparison and Migration:** Leverage the extension to compare and migrate the schema from the on-premise database to the Azure SQL Database.
+1. **Installation of SQL Server Schema Compare Extension:** Install the extension within Azure Data Studio.
+2. **Schema Comparison and Migration:** Leverage the extension to compare and migrate the schema from the on-premise database to the Azure SQL Database.
 
 ## Data Migration
 
 Transfer data seamlessly using the Azure SQL Migration extension:
 
-- **Installation of Azure SQL Migration Extension:** Install the extension within Azure Data Studio.
-- **Data Transfer:** Utilize the extension to transfer data from the on-premise database to the Azure SQL Database.
+1. **Installation of Azure SQL Migration Extension:** Install the extension within Azure Data Studio.
+2. **Data Transfer:** Utilize the extension to transfer data from the on-premise database to the Azure SQL Database.
 
 ## Validation
 
 Ensure a successful migration with a comprehensive validation process:
 
-- **Comprehensive Validation:** Inspect data, schema, and configurations to guarantee a successful migration and data integrity.
+**Comprehensive Validation:** Inspect data, schema, and configurations to guarantee a successful migration and data integrity.
 
 ## Database Backup and Restoration
 
