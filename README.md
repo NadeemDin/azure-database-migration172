@@ -10,6 +10,8 @@ Furthermore, my project includes the automation and scheduling of backups to Azu
 
 Throughout this project, I'll cover essential aspects such as virtual machine setup, SQL Server installation, database creation, migration setup, validation, disaster recovery, geo-replication, failover procedures, and Microsoft Entra Directory integration. Each section contributes to a robust and comprehensive understanding of managing databases on Azure; skills necessary for efficient cloud-based data management.
 
+An **Azure Project Diagram.pdf** has also been added to this repo to help visualise the architecture of this project (Note: database names have been generalised for understanding).
+
 ## Virtual Machine Setup
 
 In the initial phase, we create a Windows Virtual Machine (VM) to emulate the functions of a Windows server, resembling an on-premise system within a company. This VM serves as a secure repository for the company's database. Here's a quick rundown of the setup process:
